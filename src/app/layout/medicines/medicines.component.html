@@ -1,0 +1,33 @@
+        <a [routerLink]="['medicine/new']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-plus"></i>Crear Medicamento
+        </a>
+
+<table>
+  <thead>
+  <tr>
+    <th data-field="name">Nombre</th>
+    <th data-field="name">Factor</th>
+    <th data-field="name">Ref</th>
+    <th data-field="name">Editar</th>
+    <th data-field="name">Eliminar</th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let medicine of medicines">
+      <td>{{ medicine.genericName }}</td>
+      <td>{{ medicine.factor }}</td>
+      <td>{{ medicine.ref_cal }}</td>
+      <td>
+        <a [routerLink]="['/medicines', medicine.medicineId]">
+         	<i class="fa fa-fw fa-edit"></i>
+        </a>
+      </td>
+      <td>
+        <a (click)="deleteMedicine(medicine)" href="">
+         <i class="fa fa-fw fa-trash"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

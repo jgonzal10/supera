@@ -1,0 +1,80 @@
+
+  <p-panel header="Dispensacion" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+    <div class="ui-g ui-fluid">
+
+
+      <div class="ui-g-8 ui-md-6 ui-lg-2">
+          <span>Data e hora inicio</span><br>
+          <p-calendar [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030" [(ngModel)]="valueDataInicio" [showTime]="true" dateFormat="dd/mm/yy"  ></p-calendar>
+      </div>
+      <div class="ui-g-8 ui-md-6 ui-lg-2">
+          <span>Data e hora fim</span><br>
+          <p-calendar [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030" [(ngModel)]="valueDataFim" [showTime]="true" dateFormat="dd/mm/yy" ></p-calendar>
+      </div>
+      <div class="ui-g-8 ui-md-6 ui-lg-4">
+      
+    </div>
+    <div class="ui-g-8 ui-md-6 ui-lg-2">
+        <button pButton type="button" label="Pesquisar" (click)="Pesquisar()"></button>
+     
+    </div>
+
+    </div>
+  </p-panel>
+<br>
+
+  <div *ngIf="showTable" #pdf id="pdf">
+      <p-dataTable #dt exportFilename="Lista Usuarios"  resizableColumns="true" selectionMode="single" [value]="listAgentes" [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]">
+          <p-header >
+              <div class="ui-helper-clearfix">
+                  <button type="button" pButton icon="fa-file-o" iconPos="left" label="CSV" (click)="dt.exportCSV()" style="float:left"></button>
+              </div>
+            Lista Usuarios</p-header>
+          <p-column [style]="{'width':'260px'}" field="nome_usuario" header="Nome" [sortable]="true"></p-column>
+          <p-column field="infracao" header="infracao" [sortable]="true"></p-column>
+          <p-column field="condutor" header="condutor" [sortable]="true"></p-column>
+          <p-column field="veiculo" header="veiculo" [sortable]="true"></p-column>
+          <p-column field="remocao" header="remocao" [sortable]="true"></p-column>
+          <p-column field="alcolimia" header="alcolemia" [sortable]="true"></p-column>
+          <p-column field="brat" header="brat" [sortable]="true"></p-column>
+          <p-column field="ocorrencia" header="ocorrencia" [sortable]="true"></p-column>
+          <p-column field="mapeamento" header="mapeamento" [sortable]="true"></p-column>
+          <p-column field="cancelamento" header="cancelamento" [sortable]="true"></p-column>
+      </p-dataTable>
+
+  </div>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+<!--table class="table">
+    <thead>
+      <tr>
+    <th data-field="name">Medicamento</th>
+    <th data-field="name">Candidad Medicamento</th>
+    <th data-field="name">Lote Medicamento</th>
+    <th data-field="name">Solucion</th>
+    <th data-field="name">Cantidad Solucion</th>
+    <th data-field="name">Lote Solucion</th>
+    <th data-field="name">Dispositivo</th>
+    <th data-field="name">Cantidad Dispositivo</th>
+    <th data-field="name">Lote Dispositivo</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let patient of patients">
+      <td>{{ patient.patientName }}</td>
+      <td>{{ patient.patientWeight }}</td>
+      <td>{{ patient.patientHeight }}</td>
+      <td>{{ patient.patientCorporalSurfice }}</td>
+      <td>editarpath</td>
+
+      <td>
+        <a (click)="deletePatient(patient)" href="">
+        eliminar
+        </a>
+      </td>
+    </tr>
+    </tbody>
+  </table-->

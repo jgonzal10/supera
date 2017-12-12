@@ -1,0 +1,58 @@
+
+
+
+
+  <div class="row">
+    <fieldset>
+    <legend>Diagnosticar Paciente</legend>
+      <form [formGroup]="myForm" novalidate (ngSubmit)="diagnose(myForm.value)">
+     <div class="ui-g ui-fluid">
+    <div class="ui-g-12 ui-md-3">
+      <div class="form-group">
+        <label for="patient">Paciente</label>
+        <select formControlName="patientId" id="patientId" class="form-control"
+                name="patientId"  >
+          <option *ngFor="let patient of patients" [value]="patient.idNumber">{{patient.idNumber}}</option>
+        </select>
+      </div>
+    </div>
+    <div  class="ui-g-12 ui-md-3">
+      <div class="form-group">
+        <label for="grupo">Diagnosis</label>
+        <select formControlName="diagnoseId" id="diagnoseId" class="form-control"
+                name="diagnoseId" (change)="onChangeDiagnose($event.target.value)" >
+          <option *ngFor="let diagnose of diagnosis" [value]="diagnose.diagnosisId">{{diagnose.diagnosisName}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="ui-g-12 ui-md-3">
+      <div class="form-group">
+        <label for="usuario">Esquemas</label>
+        <select formControlName="schemaId" id="schemaId" class="form-control"
+                name="schemaId"  >
+          <option *ngFor="let schema of schemas" [value]="schema.schemaId">{{schema.schemaName}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="ui-g-12 ui-md-3">
+      <div class="form-group">
+      
+       <label for="initialDay">Dia Inicial</label>
+        <!--input type="date" formControlName="initialDay" name="initialDay"-->
+        <p-calendar  formControlName="initialDay" name="initialDay" [showIcon]="true"><span style="margin-left:35px"></span></p-calendar> 
+
+
+        </div>
+
+      
+    </div>
+    <div class="ui-g-12 ui-md-3">
+     <button type="submit" class="btn btn-primary">Diagnosticar</button>
+    </div>
+    </div>
+
+
+    </form>
+    </fieldset>
+
+  </div>

@@ -1,0 +1,35 @@
+        <a [routerLink]="['schema/new']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-plus"></i>Crear Esquema
+        </a>
+
+<table>
+  <thead>
+  <tr>
+    <th data-field="name">Nombre</th>
+    <th data-field="name">Editar</th>
+    <th data-field="name">Remover</th>
+    <th data-field="name">Medicamentos</th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let schema of schemas">
+      <td>{{ schema.schemaName }}</td>
+      <td>
+        <a [routerLink]="['/schemas', schema.schemaId]">
+          <i class="fa fa-fw fa-edit"></i>
+        </a>
+      </td>
+      <td>
+        <a (click)="deleteSchema(schema)" href="">
+          <i class="fa fa-fw fa-trash"></i>
+        </a>
+      </td>
+      <td>
+        <a [routerLink]="['/schema_medicines', schema.schemaId]">
+          <i class="fa fa-fw fa-medkit"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

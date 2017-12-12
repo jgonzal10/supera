@@ -1,0 +1,152 @@
+<h5>{{ title }}</h5>
+<!--div class="row">
+  <form  [formGroup]="form" (ngSubmit)="save()">
+
+    <div class="form-group">
+      
+      
+        <input id="patientId" type="hidden" [(ngModel)]="patient.patientId" formControlName="patientId"/>
+        <input id="patientName" type="text" class="form-control"
+               [(ngModel)]="patient.patientName" formControlName="patientName"
+               [class.invalid]="form.controls['patientName'].touched && !form.controls['patientName'].valid"
+        >
+        <label for="patientName"
+               [class.active]="patient.patientName"
+               data-error="patientName is required and needs to contain at least 3 chars">
+          Nombre
+        </label>
+      
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="patientLastName" type="text" class="validate"
+               [(ngModel)]="patient.patientLastName" formControlName="patientLastName"
+               [class.invalid]="form.controls['patientLastName'].touched && !form.controls['patientLastName'].valid"
+        >
+        <label for="patientLastName"
+               [class.active]="patient.patientLastName"
+               data-error="patientLastName is required and needs to contain at least 3 chars">  
+          Apellido
+        </label>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="input-field col s12">
+        <input id="patientIdNumber" type="text" class="validate"
+               [(ngModel)]="patient.patientIdNumber" formControlName="patientIdNumber"
+               [class.invalid]="form.controls['patientIdNumber'].touched && !form.controls['patientIdNumber'].valid"
+        >
+        <label for="patientIdNumber"
+               [class.active]="patient.patientIdNumber"
+               data-error="patientIdNumber is required and needs to contain at least 3 chars">
+          Cedula
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="patientAge" type="text" class="validate"
+               [(ngModel)]="patient.patientAge" formControlName="patientAge">
+        <label for="patientAge" [class.active]="patient.patientAge">Edad</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="patientGender" type="text" class="validate"
+               [(ngModel)]="patient.patientGender" formControlName="patientGender">
+        <label for="patientGender" [class.active]="patient.patientGender">Genero</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="patientWeight" type="text" class="validate"
+               [(ngModel)]="patient.patientWeight" formControlName="patientWeight">
+        <label for="patientWeight" [class.active]="patient.patientWeight">Peso</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="patientHeight" type="text" class="validate"
+               [(ngModel)]="patient.patientHeight" formControlName="patientHeight">
+        <label for="patientHeight" [class.active]="patient.patientHeight">Altura</label>
+      </div>
+    </div>
+    <button  type="submit"
+            [disabled]="!form.valid">
+      Submit<i class="material-icons right">send</i>
+    </button>
+  </form>
+</div-->
+
+
+
+<form [formGroup]="form" (ngSubmit)="save()">
+        <input id="patientId" type="hidden" formControlName="patientId"/>
+            <div class="form-group">
+              <label for="patientName" class="cols-sm-2 control-label">Nombre</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                  <input type="text" formControlName="patientName"  name="patientName" id="patientName"  placeholder="Ingresa Nombre"/>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="patientLastName" class="cols-sm-2 control-label">Apellido</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"></span>
+                  <input type="text" formControlName="patientLastName"   name="patientLastName" id="patientLastName"  placeholder="Ingresa Apellido"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="patientIdNumber" class="cols-sm-2 control-label">Cedula</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"></span>
+                  <input type="text" formControlName="patientIdNumber"  class="form-control"  name="patientIdNumber" id="patientIdNumber"  placeholder="Ingresa Cedula"/>
+                </div>
+              </div>
+            </div> 
+            <div class="form-group">
+              <label for="patientAge" class="cols-sm-2 control-label">patientAge</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"></span>
+                  <input type="text" formControlName="patientAge"  class="form-control"  name="patientAge" id="patientAge"  placeholder="Ingresa patientAge"/>
+                </div>
+              </div>
+            </div> 
+            <div class="form-group">
+              <label for="patientGender" class="cols-sm-2 control-label">patientGender</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"></span>
+                  <input type="text" formControlName="patientGender"  class="form-control"  name="patientGender" id="patientGender"  placeholder="Ingresa patientGender"/>
+                </div>
+              </div>
+            </div>      
+            <div class="form-group">
+              <label for="patientWeight" class="cols-sm-2 control-label">patientWeight</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"></span>
+                  <input type="text" formControlName="patientWeight"  class="form-control"  name="patientWeight" id="patientWeight"  placeholder="Ingresa patientWeight"/>
+                </div>
+              </div>
+            </div>    
+            <div class="form-group">
+              <label for="patientHeight" class="cols-sm-2 control-label">patientHeight</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"></span>
+                  <input type="text" formControlName="patientHeight"  class="form-control" name="patientHeight" id="patientHeight"  placeholder="Ingresa patientHeight"/>
+                </div>
+              </div>
+            </div>                       
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>

@@ -1,0 +1,39 @@
+        <a [routerLink]="['solutions/new']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-plus"></i>Crear Solucion
+        </a>
+
+<table>
+  <thead>
+  <tr>
+    <th data-field="name">Nombre</th>
+    <th data-field="name">Contenedor</th>
+    <th data-field="name">Concentracion</th>
+    <th data-field="name">Unidades</th>
+    <th data-field="name">Volumen</th>
+    <th data-field="name">Editar</th>
+    <th data-field="name">Eliminar</th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let solution of solutions">
+      <td>{{ solution.genericName }}</td>
+      <td>{{ solution.container }}</td>
+      <td>{{ solution.concentration }}</td>
+      <td>{{ solution.unities }}</td>
+      <td>{{ solution.volume }}</td>
+      <td>
+        <a [routerLink]="['/solutions', solution.solutionId]">
+          <i class="fa fa-fw fa-trash"></i>
+        </a>
+      </td>
+      <td>
+        <a (click)="deleteSolution(solution)" href="">
+          <i class="fa fa-fw fa-edit"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+

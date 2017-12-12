@@ -1,0 +1,31 @@
+<div >
+  <!--div class="row">
+
+<p-orderList [value]="medicinetotals"  [responsive]="true" header="Medicamentos Para Dispensar" 
+    filter="filter" filterBy="medicineName" filterPlaceholder="Filtro por Medicamento" dragdrop="true" dragdropScope="medicinetotals">
+
+    <ng-template let-medicinetotal pTemplate="item">
+
+        <div class="ui-helper-clearfix" (click)="clickMedicine(medicinetotal)">
+           
+            <div style="font-size:14px;margin:15px 5px 0 0">{{medicinetotal.medicineName}} - {{medicinetotal.total}}</div>
+        </div>
+    </ng-template>
+</p-orderList>
+(click)="clickMedicine(medicinetotal)"
+    </div-->
+
+
+<p-dataTable [value]="medicinetotals" dataKey="medicineId"
+    [(selection)]="selectedMedicine" (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)">
+    <p-header>Dispensación de Medicamentos de Hoy</p-header>
+
+    <p-column field="medicineId" selectionMode="single" [style]="{'width':'5%'}"></p-column>
+    <p-column field="medicineName" header="Medicamento"></p-column>
+    <p-column field="total" header="Total"></p-column>
+    
+
+
+</p-dataTable>
+
+  </div>

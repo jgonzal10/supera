@@ -1,0 +1,26 @@
+<h5>{{ title }}</h5>
+<div class="row">
+  <form materialize class="col s12" [formGroup]="form" (ngSubmit)="save()">
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">clear_all</i>
+        <input id="diagnosisId" type="hidden" [(ngModel)]="diagnose.diagnosisId" formControlName="diagnosisId"/>
+        <input id="diagnosisName" type="text" class="validate"
+               [(ngModel)]="diagnose.diagnosisName" formControlName="diagnosisName"
+               [class.invalid]="form.controls['diagnosisName'].touched && !form.controls['diagnosisName'].valid"
+        >
+        <label for="diagnosisName"
+               [class.active]="diagnose.diagnosisName"
+               data-error="El Nombre debe contener almenos 3 letras">
+          Nombre
+        </label>
+      </div>
+    </div>
+   
+    <button class="btn waves-effect waves-light" type="submit"
+            [disabled]="!form.valid">
+      Guardar<i class="material-icons right">send</i>
+    </button>
+  </form>
+</div>
+

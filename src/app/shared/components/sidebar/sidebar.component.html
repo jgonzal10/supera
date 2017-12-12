@@ -1,0 +1,47 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
+    <ul class="list-group">
+
+        <!--a [routerLink]="['/patients']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-users"></i>&nbsp;{{ 'Pacientes' | translate }}
+        </a>
+        <a [routerLink]="['/diagnosis']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-tint"></i>&nbsp;{{ 'Diagnosticos' | translate }}
+        </a>
+        <a [routerLink]="['/solutions']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-tint"></i>&nbsp;{{ 'Soluciones' | translate }}
+        </a>
+        <a [routerLink]="['/schemas']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+
+            <i class="fa fa-fw fa-list-alt"></i>&nbsp;{{ 'Esquemas' | translate }}
+        </a>
+
+
+        <a [routerLink]="['/medicines']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+
+            <i class="fa fa-fw fa-medkit"></i>&nbsp;{{ 'Medicamentos' | translate }}
+        </a-->
+        <a [routerLink]="['/diagnosepatient']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+
+            <i class="fa fa-fw fa-user-md"></i>&nbsp;{{ 'Diagnosticar' | translate }}
+        </a>
+        <a [routerLink]="['/patientschedule']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+
+            <i class="fa fa-fw fa-users"></i>&nbsp;{{ 'Cronograma' | translate }}
+        </a>
+        <a [routerLink]="['/medicinedispense']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+
+            <i class="fa fa-fw fa-hospital-o"></i>&nbsp;{{ 'Med Dispensacion' | translate }}
+        </a>
+        <a [routerLink]="['/preparations']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+
+            <i class="fa fa-fw fa-hourglass-half"></i>&nbsp;{{ 'Preparaciones' | translate }}
+        </a>
+        
+   
+
+        <a [routerLink]="['/dispense']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+
+            <i class="fa fa-fw fa-hospital-o"></i>&nbsp;{{ 'Dispensacion' | translate }}
+        </a>      
+    </ul>
+</nav>

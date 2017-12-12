@@ -1,0 +1,60 @@
+<h5>{{ title }}</h5>
+<div class="row">
+  <form materialize class="col s12" [formGroup]="form" (ngSubmit)="save()">
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">account_circle</i>
+        <input id="schemaId" type="hidden" [(ngModel)]="schema.schemaId" formControlName="schemaId"/>
+        <input id="schemaName" type="text" class="validate"
+               [(ngModel)]="schema.schemaName" formControlName="schemaName"
+               [class.invalid]="form.controls['schemaName'].touched && !form.controls['schemaName'].valid"
+        >
+        <label for="schemaName"
+               [class.active]="schema.schemaName"
+               data-error="schemaName is required and needs to contain at least 3 chars">
+          Nombre
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="schemaLastName" type="text" class="validate"
+               [(ngModel)]="schema.schemaCycles" formControlName="schemaCycles"
+               [class.invalid]="form.controls['schemaCycles'].touched && !form.controls['schemaCycles'].valid"
+        >
+        <label for="schemaCycles"
+               [class.active]="schema.schemaCycles"
+               data-error="schemaCycles is required and needs to contain at least 3 chars">  
+          Ciclos
+        </label>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="input-field col s12">
+        <input id="schemaIntervalCycles" type="text" class="validate"
+               [(ngModel)]="schema.schemaIntervalCycles" formControlName="schemaIntervalCycles"
+               [class.invalid]="form.controls['schemaIntervalCycles'].touched && !form.controls['schemaIntervalCycles'].valid"
+        >
+        <label for="schemaIntervalCycles"
+               [class.active]="schema.schemaIntervalCycles"
+               data-error="schemaIntervalCycles is required and needs to contain at least 3 chars">
+          Intervalos
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="schemaTotalDays" type="text" class="validate"
+               [(ngModel)]="schema.schemaTotalDays" formControlName="schemaTotalDays">
+        <label for="schemaTotalDays" [class.active]="schema.schemaTotalDays">Dias Totales</label>
+      </div>
+    </div>
+   
+    <button class="btn waves-effect waves-light" type="submit"
+            [disabled]="!form.valid">
+      Submit<i class="material-icons right">send</i>
+    </button>
+  </form>
+</div>

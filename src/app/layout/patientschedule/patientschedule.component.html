@@ -1,0 +1,30 @@
+
+<div class="ui-g ui-fluid">
+    <div class="ui-g-12 ui-md-6">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+            <input type="text" pInputText placeholder="Buscar Paciente por Número">   
+            <button id="disabled-btn" type="button" (click)="SearchUser()" pButton label="Buscar"></button>       
+        </div>
+    </div>   
+ 
+    </div>   
+<p-dataTable [value]="personalizedSchemaValues" dataKey="medicineId"
+    (onRowUnselect)="onRowUnselect($event)">
+    <p-header>Ana Gomes Esquema1</p-header>
+    <p-column field="medicineGenericName" header="Medicamento"></p-column>
+    <p-column field="cycle" header="Ciclo"></p-column>
+    <p-column field="applicationDate" header="Fecha de Aplicación"></p-column>
+    <p-column field="theoricalDose" header="Dosis Teorica"></p-column>
+    <p-column field="solutionId" header="Solución"></p-column>
+    <p-column field="finalVolume" header="Volumen Final"></p-column>
+    <p-column field="deviceId" header="Dispositivo"></p-column>
+</p-dataTable>
+
+
+
+
+
+
+
+

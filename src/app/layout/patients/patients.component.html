@@ -1,0 +1,39 @@
+        <a [routerLink]="['patients/new']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-plus"></i>Crear Paciente
+        </a>
+<p-dataTable #dt [value]="patients">
+    <p-column field="patientName" header="Nombre"></p-column>
+    <p-column field="patientWeight" header="Peso"></p-column>
+    <p-column field="patientHeight" header="Altura"></p-column>
+    <p-column field="patientCorporalSurfice" header="Superficie Corporal"></p-column>
+</p-dataTable>
+<table class="table">
+    <!--thead>
+      <tr>
+    <th data-field="name">Nombre</th>
+    <th data-field="name">Peso</th>
+    <th data-field="name">Altura</th>
+    <th data-field="name">Superfice Corporal</th>
+    <th data-field="name">Editar</th>
+    <th data-field="name">Eliminar</th>
+      </tr>
+    </thead-->
+    <tbody>
+    <tr *ngFor="let patient of patients">
+      <td>{{ patient.patientName }}</td>
+      <td>{{ patient.patientWeight }}</td>
+      <td>{{ patient.patientHeight }}</td>
+      <td>{{ patient.patientCorporalSurfice }}</td>
+      <td><a [routerLink]="['/patients', patient.patientId]">
+          <i class="fa fa-fw fa-edit"></i>
+        </a></td>
+
+      <td>
+        <a (click)="deletePatient(patient)" href="">
+        <i class="fa fa-fw fa-trash"></i>
+        </a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+

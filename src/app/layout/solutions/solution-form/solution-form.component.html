@@ -1,0 +1,68 @@
+<h5>{{ title }}</h5>
+<div class="row">
+  <form materialize class="col s12" [formGroup]="form" (ngSubmit)="save()">
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">account_circle</i>
+        <input id="solutionId" type="hidden" [(ngModel)]="solution.solutionId" formControlName="solutionId"/>
+        <input id="genericName" type="text" class="validate"
+               [(ngModel)]="solution.genericName" formControlName="genericName"
+               [class.invalid]="form.controls['genericName'].touched && !form.controls['genericName'].valid"
+        >
+        <label for="genericName"
+               [class.active]="solution.genericName"
+               data-error="genericName is required and needs to contain at least 3 chars">
+          Nombre Generico
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="container" type="text" class="validate"
+               [(ngModel)]="solution.container" formControlName="container"
+               [class.invalid]="form.controls['container'].touched && !form.controls['container'].valid"
+        >
+        <label for="container"
+               [class.active]="solution.container"
+               data-error="container is required and needs to contain at least 3 chars">  
+          Contenedor
+        </label>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="input-field col s12">
+        <input id="concentration" type="text" class="validate"
+               [(ngModel)]="solution.concentration" formControlName="concentration"
+               [class.invalid]="form.controls['concentration'].touched && !form.controls['concentration'].valid"
+        >
+        <label for="concentration"
+               [class.active]="solution.concentration"
+               data-error="concentration is required and needs to contain at least 3 chars">
+          Concentracion
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="unities" type="text" class="validate"
+               [(ngModel)]="solution.unities" formControlName="unities">
+        <label for="unities" [class.active]="solution.unities">Unidades</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="volume" type="text" class="validate"
+               [(ngModel)]="solution.volume" formControlName="volume">
+        <label for="volume" [class.active]="solution.volume">Volumen</label>
+      </div>
+    </div>
+
+   
+    <button class="btn waves-effect waves-light" type="submit"
+            [disabled]="!form.valid">
+      Submit<i class="material-icons right">send</i>
+    </button>
+  </form>
+</div>

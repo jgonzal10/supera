@@ -1,0 +1,53 @@
+<h5>{{ title }}</h5>
+<div class="row">
+  <form materialize class="col s12" [formGroup]="form" (ngSubmit)="save()">
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">account_circle</i>
+        <input id="medicineId" type="hidden" [(ngModel)]="medicine.medicineId" formControlName="medicineId"/>
+        <input id="genericName" type="text" class="validate"
+               [(ngModel)]="medicine.genericName" formControlName="genericName"
+               [class.invalid]="form.controls['genericName'].touched && !form.controls['genericName'].valid"
+        >
+        <label for="genericName"
+               [class.active]="medicine.genericName"
+               data-error="genericName is required and needs to contain at least 3 chars">
+          Nombre Generico
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="factor" type="text" class="validate"
+               [(ngModel)]="medicine.factor" formControlName="factor">
+        <label for="factor" [class.active]="medicine.factor">Factor</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="ref_cal" type="text" class="validate"
+               [(ngModel)]="medicine.ref_cal" formControlName="ref_cal">
+        <label for="ref_cal" [class.active]="medicine.ref_cal">Referencia</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="maxApplicationDose" type="text" class="validate"
+               [(ngModel)]="medicine.maxApplicationDose" formControlName="maxApplicationDose">
+        <label for="maxApplicationDose" [class.active]="medicine.maxApplicationDose">Dosis Maxima Aplicacion</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="maxAcumDose" type="text" class="validate"
+               [(ngModel)]="medicine.maxAcumDose" formControlName="maxAcumDose">
+        <label for="maxAcumDose" [class.active]="medicine.maxAcumDose">Dosis Maxima Acumulada</label>
+      </div>
+    </div>
+    <button class="btn waves-effect waves-light" type="submit"
+            [disabled]="!form.valid">
+      Submit<i class="material-icons right">send</i>
+    </button>
+  </form>
+</div>

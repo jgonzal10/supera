@@ -1,0 +1,52 @@
+
+  <!--p-panel  header={{medName}}-{{medtotal}} [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+  <form [formGroup]="myForm" novalidate (ngSubmit)="dispensacion(myForm.value)">
+    <div formArrayName="dispensations" class="ui-g ui-fluid">
+          <div *ngFor="let dispensation of medicineDispenseTotal; let i=index" class="panel panel-default">
+         <input type="text" value={{i+1}} hidden>
+
+ <div [formGroupName]="i">
+    <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+        <select formControlName="medicineBrandId" id="medicineBrandId" class="form-control"
+                name="medicineBrandId"  >
+          <option  [value]="Medicamento">Seleccione</option>
+
+          <option *ngFor="let medicine of medicines" [value]="medicine.medicineId">{{medicine.genericName}}-{{medicine.volume}}-{{medicine.laboratoryName}}</option>
+        </select>
+        </div>
+    </div>
+
+    <div class="ui-g-12 ui-md-4" >
+        <div class="ui-inputgroup">
+            
+            <input formControlName="quantity" class="form-control" type="text" pInputText placeholder="Cantidad">         
+        </div>
+    </div>
+    
+    <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+            <input type="text" formControlName="lote" class="form-control"  pInputText placeholder="Lote">   
+              
+        </div>
+    </div>
+    </div>
+            
+
+</div>
+</div>
+
+        <div class="margin-20">
+          <a (click)="addDispensation()" style="cursor: default">
+            Addicionar Empaque +
+          </a>
+        </div>
+    <button type="button" (click)="clickSendDispense(myForm.value)" >Enviar</button>
+
+
+    </form>
+
+
+  </p-panel-->
+
+
