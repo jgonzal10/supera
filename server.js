@@ -7,13 +7,11 @@ if (process.env.GCLOUD_PROJECT) {
 }
 var path = require('path');
 var express = require('express');
-var bodyParser = require('body-parser');
-var google = require('googleapis');
-var youtube = google.youtube('v3');
+
 
 var app = express();
 
-app.use(bodyParser.json());
+
 app.use(express.static(path.join(__dirname, 'dist')));
 
 
